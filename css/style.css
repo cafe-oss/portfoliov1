@@ -142,9 +142,9 @@ svg {
 /* left side */
 
 @media (min-width: 769px) {
-  .ja-layout {
+  /* .ja-layout {
     padding: 6rem 0;
-  }
+  } */
 
   .ja-sidebar {
     width: 48%;
