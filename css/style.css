@@ -1,0 +1,446 @@
+:root {
+  --main-bg-color: #f4f4f4;
+  --main-fg-color: #333;
+  --accent-color: rgb(161, 21, 43);
+  --primary-color: rgb(70, 65, 55);
+  --primary-color-value: 70, 65, 55;
+  --secondary-color: #6b5c47;
+  --padding: 10px;
+  --margin: 10px;
+  --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
+  --shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+  /* --tw-shadow-colored: inset 0 1px 0 0 var(--tw-shadow-color); */
+  --drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+  --ring-offset-shadow: 0 0 #0000;
+  --ring-shadow: 0 0 #0000;
+}
+
+html {
+  position: relative;
+  height: 100%;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+body {
+  margin: 0;
+  /* background-color: rgb(15 23 42); */
+  background-color: rgb(240, 232, 213);
+}
+
+input,
+textarea,
+button {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-color);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+}
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+h3 {
+  /* font-size: 1.17em; */
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+/* @media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+} */
+
+p,
+span {
+  color: var(--secondary-color);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+ul li,
+ol li {
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  fill: var(--primary-color);
+  opacity: 0.7;
+}
+
+.ja-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+@media (max-width: 768px) {
+  .ja-layout {
+    flex-direction: column;
+    padding: 4rem 3rem;
+  }
+}
+
+/* left side */
+
+@media (min-width: 769px) {
+  .ja-layout {
+    padding: 6rem 0;
+  }
+
+  .ja-sidebar {
+    width: 48%;
+    min-height: 78vh;
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .ja-content-container {
+    width: 52%;
+  }
+}
+
+@media (min-width: 769px) {
+  .ja-sidebar-header {
+    position: fixed;
+    top: 6em;
+  }
+  .ja-sidebar-social-links {
+    position: fixed;
+    bottom: 6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .ja-sidebar {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.ja-content-container > section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* side menu links */
+
+.ja-sidebar-menu {
+  margin-top: 4.6em;
+}
+
+.ja-sidebar-menu-list {
+  color: var(--primary-color);
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+
+.ja-sidebar-menu-list > li {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.ja-sidebar-menu-list > li > a {
+  opacity: 0.7;
+  display: inline-block;
+  transform-origin: left center;
+}
+
+.ja-sidebar-menu-list > li > a:hover {
+  opacity: 1 !important;
+}
+
+/* social icon links */
+
+.ja-sidebar-social-links {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 0.25rem;
+}
+
+.ja-sidebar-social-links > ul {
+  display: flex;
+}
+
+.ja-sidebar-social-links > ul > li {
+  margin-right: 1.25rem;
+}
+
+.ja-sidebar-social-links > ul > li > a:hover svg {
+  opacity: 1;
+}
+
+/* right side */
+
+.ja-about,
+.ja-experience,
+.ja-projects {
+  margin-bottom: 9rem;
+}
+
+.ja-about > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ja-about > div::before {
+  content: "";
+  position: relative;
+  background-image: url("../assets/images/me.webp");
+  width: 100px;
+  height: 100px;
+}
+
+.ja-about img {
+  border: 1px solid rgba(29, 23, 15, 0.1);
+  border-radius: 50%;
+}
+
+.ja-about p {
+  text-align: justify;
+}
+
+.ja-card-wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.ja-card-wrapper > div {
+  padding: 1rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.ja-card-wrapper > div:hover .ja-card-effects {
+  background-color: rgba(225, 214, 196, 0.5);
+  box-shadow: var(--ring-offset-shadow, 0 0 #0000),
+    var(--ring-shadow, 0 0 #0000), var(--shadow);
+  filter: var(--drop-shadow);
+  z-index: -1;
+}
+.ja-card-wrapper > div:hover .ja-card-image {
+  border-color: rgba(29, 23, 15, 0.1);
+}
+
+@media (min-width: 768px) {
+  .ja-card-wrapper > div {
+    gap: 1rem;
+  }
+}
+
+.ja-card-effects {
+  position: absolute;
+  border-radius: 0.375rem;
+  top: -1rem;
+  bottom: -1rem;
+  left: -1rem;
+  right: -1rem;
+}
+
+.ja-card-header {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.ja-card-header,
+.ja-card-image {
+  grid-column: span 2 / span 2;
+}
+
+.ja-card-info {
+  grid-column: span 6 / span 6;
+}
+
+.ja-card-title,
+.ja-card-subtitle {
+  font-size: inherit;
+}
+.ja-card-title {
+  color: var(--primary-color);
+}
+
+.ja-card-info > h3,
+.ja-card-title {
+  line-height: 1;
+}
+
+.ja-card-subtitle {
+  font-weight: 500;
+  line-height: 1.375;
+}
+
+img.ja-card-image {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.ja-card-job-description > p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.ja-card-job-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.ja-card-job-list > li {
+  margin-top: 0.5rem;
+  margin-right: 0.375rem;
+}
+
+.ja-card-job-list > li > div {
+  color: var(--accent-color);
+  line-height: 1.25rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 4px 12px 7px 12px;
+  /* background-color: rgba(45, 212, 191, 0.1); */
+  background-color: rgba(210, 43, 64, 0.1);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* contact  */
+.ja-contact {
+  justify-content: space-between;
+}
+.ja-contact > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.ja-contact > form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.ja-contact > form label {
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.ja-contact > form input,
+.ja-contact > form textarea {
+  padding: 0.75rem;
+  border: 1px solid rgba(29, 23, 15, 0.1);
+  border-radius: 0.125rem;
+  background-color: rgb(250, 245, 235);
+}
+
+.ja-experience > a,
+.ja-contact > form button {
+  width: max-content;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  background-color: rgba(var(--primary-color-value), 0.7);
+  color: var(--main-bg-color);
+  border-radius: 0.125rem;
+}
+
+.ja-contact > form button {
+  margin: 0 auto;
+}
+.ja-experience > a:hover,
+.ja-contact > form button:hover {
+  background-color: rgba(var(--primary-color-value), 1);
+}
+
+@media (min-width: 769px) {
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}
