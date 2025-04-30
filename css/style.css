@@ -279,6 +279,12 @@ svg {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
+@media (max-width: 768px) {
+  .ja-card-wrapper > div {
+    grid-template-columns: 1fr;
+  }
+}
+
 .ja-card-wrapper > div:hover .ja-card-effects {
   background-color: rgba(225, 214, 196, 0.5);
   box-shadow: var(--ring-offset-shadow, 0 0 #0000),
@@ -326,6 +332,9 @@ svg {
 }
 .ja-card-title {
   color: var(--primary-color);
+}
+.ja-card-info > h3 {
+  margin-top: 0.5rem !important;
 }
 
 .ja-card-info > h3,
