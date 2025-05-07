@@ -1,5 +1,6 @@
 :root {
-  --main-bg-color: rgb(240, 232, 213);
+  /* --main-bg-color: rgb(240, 232, 213); */
+  --main-bg-color: rgb(241, 235, 224);
   --main-fg-color: #333;
   --accent-color: rgb(161, 21, 43);
   --primary-color: rgb(70, 65, 55);
@@ -31,7 +32,15 @@ html {
 body {
   margin: 0;
   /* background-color: rgb(15 23 42); */
-  background-color: rgb(240, 232, 213);
+  /* background-color: rgb(240, 232, 213); */
+  background: linear-gradient(
+      to top,
+      rgb(255, 255, 255) 0%,
+      /* rgb(251, 246, 237) 10%, */ rgb(241, 235, 224) 10%,
+      rgb(241, 235, 224) 80%,
+      rgb(255, 255, 255) 100%
+    )
+    fixed;
 }
 
 input,
