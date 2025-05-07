@@ -30,11 +30,59 @@ document.addEventListener("DOMContentLoaded", (event) => {
           } else {
             gsap.to(link, {
               scale: 1,
-              opacity: 0.7,
+              opacity: 0.5,
               duration: 0.3,
               ease: "power3.out",
             });
           }
+        });
+      }
+
+      const ja_h1 = $(".ja-sidebar-header > h1");
+      if (ja_h1.length != 0) {
+        gsap.from(ja_h1, {
+          opacity: 0,
+          x: "-100%",
+          duration: 1,
+          ease: "power2.out",
+        });
+      }
+
+      const ja_h2 = $(".ja-sidebar-header > h2");
+      if (ja_h2.length != 0) {
+        gsap.from(ja_h2, {
+          opacity: 0,
+          x: "-100%",
+          duration: 1,
+          delay: 0.1,
+          ease: "power2.out",
+        });
+      }
+
+      const ja_p = $(".ja-sidebar-header > p");
+      if (ja_p.length != 0) {
+        gsap.from(ja_p, {
+          opacity: 0,
+          x: "-100%",
+          duration: 1,
+          delay: 0.5,
+          ease: "power2.out",
+        });
+      }
+
+      const ja_img = $(".ja-about img");
+      if (ja_img.length != 0) {
+        gsap.from(ja_img, {
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        });
+
+        gsap.to(ja_img, {
+          opacity: 1,
+          duration: 1,
+          delay: 0.1,
+          ease: "power3.out",
         });
       }
     },

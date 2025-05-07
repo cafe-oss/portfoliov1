@@ -165,6 +165,7 @@ svg {
   .ja-sidebar-header {
     position: fixed;
     top: 6em;
+    overflow: hidden;
   }
   .ja-sidebar-social-links {
     position: fixed;
@@ -179,9 +180,10 @@ svg {
 }
 
 .ja-content-container > section {
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1.5rem;
   width: 100%;
 }
@@ -207,9 +209,10 @@ svg {
 }
 
 .ja-sidebar-menu-list > li > a {
-  opacity: 0.7;
+  opacity: 0.5;
   display: inline-block;
   transform-origin: left center;
+  font-size: 14px;
 }
 
 .ja-sidebar-menu-list > li > a:hover {
@@ -230,6 +233,17 @@ svg {
 
 .ja-sidebar-social-links > ul > li {
   margin-right: 1.25rem;
+  display: flex;
+  height: 100%;
+  width: max-content;
+  align-items: center;
+}
+
+.ja-sidebar-social-links > ul > li > a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
 }
 
 .ja-sidebar-social-links > ul > li > a:hover svg {
@@ -262,6 +276,7 @@ svg {
 .ja-about img {
   border: 1px solid rgba(29, 23, 15, 0.1);
   border-radius: 50%;
+  opacity: 0;
 }
 
 .ja-about p {
@@ -277,6 +292,7 @@ svg {
   position: relative;
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
+  cursor: default;
 }
 
 @media (max-width: 768px) {
@@ -416,7 +432,7 @@ img.ja-card-image {
   background-color: rgb(250, 245, 235);
 }
 
-.ja-experience > a,
+.ja-button > a,
 .ja-contact > form button {
   width: max-content;
   padding: 0.75rem 1.5rem;
@@ -431,7 +447,7 @@ img.ja-card-image {
 .ja-contact > form button {
   margin: 0 auto;
 }
-.ja-experience > a:hover,
+.ja-button > a:hover,
 .ja-contact > form button:hover {
   background-color: rgba(var(--primary-color-value), 1);
 }
