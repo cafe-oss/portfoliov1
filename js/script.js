@@ -1,4 +1,40 @@
-jQuery(document).ready(function ($) {});
+jQuery(document).ready(function ($) {
+  function loadInstagramSVG() {
+    fetch("assets/svg/github.svg")
+      .then((response) => {
+        return response.text();
+      })
+      .then((svg) => {
+        document.getElementById("ja-github-icon").innerHTML = svg;
+      });
+  }
+  loadInstagramSVG();
+
+  function loadLinkedInSVG() {
+    fetch("assets/svg/linkedin.svg")
+      .then((response) => {
+        return response.text();
+      })
+      .then((svg) => {
+        document.getElementById("ja-linkedin-icon").innerHTML = svg;
+      });
+  }
+  loadLinkedInSVG();
+
+  function loadbuttonInSVG() {
+    fetch("assets/svg/button.svg")
+      .then((response) => {
+        return response.text();
+      })
+      .then((svg) => {
+        $(".ja-card-link").each(function () {
+          $(this).html(svg);
+        });
+      });
+  }
+  loadbuttonInSVG();
+});
+
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(SplitText);
