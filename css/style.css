@@ -2,9 +2,13 @@
   /* --main-bg-color: rgb(240, 232, 213); */
   --main-bg-color: rgb(241, 235, 224);
   --main-fg-color: #333;
-  --accent-color: rgb(161, 21, 43);
-  --primary-color: rgb(70, 65, 55);
-  --primary-color-value: 70, 65, 55;
+  /* --accent-color: rgb(161, 21, 43); */
+  --accent-color: rgba(42, 81, 115);
+  --accent-color-value: 42, 81, 115;
+  /* --primary-color: rgb(70, 65, 55);
+  --primary-color-value: 70, 65, 55; */
+  --primary-color: rgb(123, 112, 82);
+  --primary-color-value: 123, 112, 82;
   --secondary-color: #6b5c47;
   --button-bg-color: #f4f4f4;
   --padding: 10px;
@@ -36,8 +40,8 @@ body {
   background: linear-gradient(
       to top,
       rgb(255, 255, 255) 0%,
-      /* rgb(251, 246, 237) 10%, */ rgb(241, 235, 224) 10%,
-      rgb(241, 235, 224) 80%,
+      /* rgb(251, 246, 237) 10%, */ var(--main-bg-color) 15%,
+      var(--main-bg-color) 80%,
       rgb(255, 255, 255) 100%
     )
     fixed;
@@ -131,7 +135,8 @@ ol li {
 }
 
 svg {
-  fill: var(--primary-color);
+  /* fill: var(--primary-color); */
+  fill: rgba(var(--accent-color-value), 0.7);
   opacity: 0.7;
 }
 
@@ -387,7 +392,7 @@ svg {
 }
 
 .ja-card-title > a svg {
-  fill: #000;
+  fill: var(--primary-color);
   transform: translate(-0.15rem, 0.25rem);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
@@ -437,7 +442,8 @@ svg {
 }
 
 .ja-card-job-list > li > div {
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
+  color: rgb(161, 21, 43);
   line-height: 1.25rem;
   font-weight: 500;
   font-size: 0.7rem;
@@ -488,8 +494,8 @@ svg {
   cursor: pointer;
   font-size: 16px;
   border: none;
-  background-color: rgba(var(--primary-color-value), 0.7);
-  color: var(--button-bg-color);
+  background-color: rgba(var(--accent-color-value), 0.7);
+  color: var(--main-bg-color);
   border-radius: 0.125rem;
 }
 
@@ -498,7 +504,7 @@ svg {
 }
 .ja-button > a:hover,
 .ja-contact > form button:hover {
-  background-color: rgba(var(--primary-color-value), 1);
+  background-color: rgba(var(--accent-color-value), 1);
 }
 
 @media (min-width: 769px) {
