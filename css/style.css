@@ -9,7 +9,8 @@
   --primary-color-value: 70, 65, 55; */
   --primary-color: rgb(123, 112, 82);
   --primary-color-value: 123, 112, 82;
-  --secondary-color: #6b5c47;
+  --secondary-color: rgb(107, 92, 71);
+  --secondary-color-value: 107, 92, 71;
   --button-bg-color: #f4f4f4;
   --padding: 10px;
   --margin: 10px;
@@ -292,7 +293,12 @@ svg {
 .ja-about img {
   border: 1px solid rgba(29, 23, 15, 0.1);
   border-radius: 50%;
-  opacity: 0;
+}
+
+@media (min-width: 769px) {
+  .ja-about img {
+    opacity: 0;
+  }
 }
 
 .ja-about p {
@@ -442,14 +448,14 @@ svg {
 }
 
 .ja-card-job-list > li > div {
-  /* color: var(--accent-color); */
-  color: rgb(161, 21, 43);
+  /* color: rgb(161, 21, 43); */
+  color: var(--secondary-color);
   line-height: 1.25rem;
   font-weight: 500;
   font-size: 0.7rem;
   padding: 4px 12px 7px 12px;
   /* background-color: rgba(45, 212, 191, 0.1); */
-  background-color: rgba(210, 43, 64, 0.1);
+  background-color: rgba(var(--secondary-color-value), 0.1);
   border-radius: 9999px;
   display: flex;
   align-items: center;
