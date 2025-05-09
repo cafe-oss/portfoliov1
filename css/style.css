@@ -305,8 +305,10 @@ svg {
   text-align: justify;
 }
 
-.ja-experience {
-  margin-bottom: 300px;
+@media (min-width: 769px) {
+  .ja-experience {
+    margin-bottom: 300px;
+  }
 }
 
 .ja-experience .ja-card-wrapper {
