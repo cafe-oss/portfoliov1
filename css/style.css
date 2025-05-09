@@ -1,12 +1,8 @@
 :root {
-  /* --main-bg-color: rgb(240, 232, 213); */
   --main-bg-color: rgb(241, 235, 224);
   --main-fg-color: #333;
-  /* --accent-color: rgb(161, 21, 43); */
   --accent-color: rgba(42, 81, 115);
   --accent-color-value: 42, 81, 115;
-  /* --primary-color: rgb(70, 65, 55);
-  --primary-color-value: 70, 65, 55; */
   --primary-color: rgb(123, 112, 82);
   --primary-color-value: 123, 112, 82;
   --secondary-color: rgb(107, 92, 71);
@@ -16,7 +12,6 @@
   --margin: 10px;
   --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
   --shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
-  /* --tw-shadow-colored: inset 0 1px 0 0 var(--tw-shadow-color); */
   --drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
   --ring-offset-shadow: 0 0 #0000;
   --ring-shadow: 0 0 #0000;
@@ -36,12 +31,10 @@ html {
 
 body {
   margin: 0;
-  /* background-color: rgb(15 23 42); */
-  /* background-color: rgb(240, 232, 213); */
   background: linear-gradient(
-      to top,
-      rgb(255, 255, 255) 0%,
-      /* rgb(251, 246, 237) 10%, */ var(--main-bg-color) 15%,
+      to bottom,
+      var(--main-bg-color) 0%,
+      var(--main-bg-color) 15%,
       var(--main-bg-color) 80%,
       rgb(255, 255, 255) 100%
     )
@@ -82,34 +75,9 @@ h2 {
   line-height: 1.75rem;
 }
 h3 {
-  /* font-size: 1.17em; */
   font-size: 16px;
   line-height: 1.375;
 }
-
-/* @media (max-width: 1024px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  h2 {
-    font-size: 2.25rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.25rem;
-  }
-} */
 
 p,
 span {
@@ -136,7 +104,6 @@ ol li {
 }
 
 svg {
-  /* fill: var(--primary-color); */
   fill: rgba(var(--accent-color-value), 0.7);
   opacity: 0.7;
 }
@@ -158,9 +125,20 @@ svg {
 /* left side */
 
 @media (min-width: 769px) {
-  /* .ja-layout {
-    padding: 6rem 0;
-  } */
+  .ja-layout::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      to bottom,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 20%,
+      var(--main-bg-color) 100%
+    );
+  }
 
   .ja-sidebar {
     width: 48%;
@@ -275,6 +253,10 @@ svg {
   margin-bottom: 9rem;
 }
 
+.ja-card-container {
+  z-index: -1;
+}
+
 .ja-about > div {
   display: flex;
   flex-direction: column;
@@ -303,6 +285,7 @@ svg {
 
 .ja-about p {
   text-align: justify;
+  padding: 0 1rem;
 }
 
 @media (min-width: 769px) {
@@ -450,13 +433,11 @@ svg {
 }
 
 .ja-card-job-list > li > div {
-  /* color: rgb(161, 21, 43); */
   color: var(--secondary-color);
   line-height: 1.25rem;
   font-weight: 500;
   font-size: 0.7rem;
   padding: 4px 12px 7px 12px;
-  /* background-color: rgba(45, 212, 191, 0.1); */
   background-color: rgba(var(--secondary-color-value), 0.1);
   border-radius: 9999px;
   display: flex;
@@ -467,6 +448,7 @@ svg {
 /* contact  */
 .ja-contact {
   justify-content: space-between;
+  padding: 0 1rem;
 }
 .ja-contact > form {
   display: flex;
